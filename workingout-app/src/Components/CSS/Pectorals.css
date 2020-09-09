@@ -1,0 +1,19 @@
+.beginner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.intermediate {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.advanced {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
