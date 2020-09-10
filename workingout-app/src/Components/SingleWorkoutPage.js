@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
 import Youtube from 'react-youtube';
+import "./CSS/SingleWorkoutPage.css"
 
 let workoutTarget = '';
 let videoID = '';
@@ -26,9 +26,10 @@ class SingleWorkoutPage extends Component {
 		videoID = workoutTarget.workout_url.split('?v=')[1];
 		return (
 			<nav>
+				<span className="exerciseName" >{workoutTarget.exercise} </span>
 				<Youtube opts={opts} onReady={this._onReady} videoId={videoID} />
-				{workoutTarget.exercise}
-				{workoutTarget.muscleGroupOne}
+				Primary Muscle Group: {workoutTarget.muscleGroupOne}
+                Secondary Muscle Group:{workoutTarget.muscleGroupTwo}
 				<img
 					src={workoutTarget.workout_img}
 					alt={workoutTarget.description}

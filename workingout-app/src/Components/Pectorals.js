@@ -1,47 +1,53 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
-import './CSS/Pectorals.css'
-import SingleWorkoutPage from './SingleWorkoutPage'
+import './CSS/Pectorals.css';
+import SingleWorkoutPage from './SingleWorkoutPage';
 
 class Pectorals extends Component {
 	render() {
 		// Mapping through API, for Pectoral exercise with a Beginner difficulty
 		let workoutInfo = this.props.workout.map((pec) => {
-			if (pec.muscleGroupOne === 'Pectorals') {
-				if (pec.levelOfDifficulty === 'Beginner')
-					return (
-						<Link to={`/pectorals/${pec.exercise}`}>
-							<li>
-								{pec.exercise} - {pec.levelOfDifficulty}{' '}
-							</li>
-						</Link>
-					);
+			if (
+				pec.muscleGroupOne === 'Pectorals' &&
+				pec.levelOfDifficulty === 'Beginner'
+			) {
+				return (
+					<Link to={`/pectorals/${pec.exercise}`}>
+						<li>
+							{pec.exercise} - {pec.levelOfDifficulty}{' '}
+						</li>
+					</Link>
+				);
 			}
 		});
 		// Mapping through API, for Pectoral exercise with a Intermediate difficulty
 		let workoutInfo2 = this.props.workout.map((pec) => {
-			if (pec.muscleGroupOne === 'Pectorals') {
-				if (pec.levelOfDifficulty === 'Intermediate')
-					return (
-                        <Link to={`/pectorals/${pec.exercise}`}> 
+			if (
+				pec.muscleGroupOne === 'Pectorals' &&
+				pec.levelOfDifficulty === 'Intermediate'
+			) {
+				return (
+					<Link to={`/pectorals/${pec.exercise}`}>
 						<li>
 							{pec.exercise} - {pec.levelOfDifficulty}{' '}
 						</li>
-                        </Link>
-					);
+					</Link>
+				);
 			}
 		});
 		// Mapping through API, for Pectoral exercise with an Advanced difficulty
 		let workoutInfo3 = this.props.workout.map((pec) => {
-			if (pec.muscleGroupOne === 'Pectorals') {
-				if (pec.levelOfDifficulty === 'Advanced')
-					return (
-                        <Link to={`/pectorals/${pec.exercise}`}>
+			if (
+				pec.muscleGroupOne === 'Pectorals' &&
+				pec.levelOfDifficulty === 'Advanced'
+			) {
+				return (
+					<Link to={`/pectorals/${pec.exercise}`}>
 						<li>
 							{pec.exercise} - {pec.levelOfDifficulty}{' '}
 						</li>
-                        </Link>
-					);
+					</Link>
+				);
 			}
 		});
 
