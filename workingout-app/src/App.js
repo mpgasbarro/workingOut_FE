@@ -8,6 +8,7 @@ import Triceps from './Components/Triceps';
 import Deltoids from './Components/Deltoids';
 import Biceps from './Components/Biceps';
 import Core from './Components/Core';
+import Back from './Components/Back';
 
 let workoutUrl =
 	'https://immense-earth-33685.herokuapp.com/workout/?format=json';
@@ -157,37 +158,68 @@ class App extends Component {
 							);
 						}}
 					/>
-					<nav>
-						<Link to='/core'>
-							<img
-								src='https://image.jimcdn.com/app/cms/image/transf/dimension=185x10000:format=jpg/path/sb706e6011cc48302/image/if120ec98e7652429/version/1541689214/abs-abdominals-muscle-group-exercises.jpg'
-								alt='human body - chest'
-								width='150'
-								height='150'
-							/>
-						</Link>
-					</nav>
-					<main>
-						<Route
-							exact
-							path='/core'
-							render={() => {
-								return <Core workout={this.state.workouts} />;
-							}}
+				</main>
+				<nav>
+					<Link to='/core'>
+						<img
+							src='https://image.jimcdn.com/app/cms/image/transf/dimension=185x10000:format=jpg/path/sb706e6011cc48302/image/if120ec98e7652429/version/1541689214/abs-abdominals-muscle-group-exercises.jpg'
+							alt='human body - chest'
+							width='150'
+							height='150'
 						/>
-						<Route
-							exact
-							path='/core/:workout'
-							render={(routerProp) => {
-								return (
-									<SingleWorkoutPage
-										match={routerProp.match}
-										workoutData={this.state.workouts}
-									/>
-								);
-							}}
+					</Link>
+				</nav>
+				<main>
+					<Route
+						exact
+						path='/core'
+						render={() => {
+							return <Core workout={this.state.workouts} />;
+						}}
+					/>
+					<Route
+						exact
+						path='/core/:workout'
+						render={(routerProp) => {
+							return (
+								<SingleWorkoutPage
+									match={routerProp.match}
+									workoutData={this.state.workouts}
+								/>
+							);
+						}}
+					/>
+				</main>
+				<nav>
+					<Link to='/back'>
+						<img
+							src='https://spinalbackrack.com/wp-content/uploads/2019/01/paraspinal-muscles.jpg'
+							alt='human body - back'
+							width='150'
+							height='150'
 						/>
-					</main>
+					</Link>
+				</nav>
+				<main>
+					<Route
+						exact
+						path='/back'
+						render={() => {
+							return <Back workout={this.state.workouts} />;
+						}}
+					/>
+					<Route
+						exact
+						path='/back/:workout'
+						render={(routerProp) => {
+							return (
+								<SingleWorkoutPage
+									match={routerProp.match}
+									workoutData={this.state.workouts}
+								/>
+							);
+						}}
+					/>
 				</main>
 			</div>
 		);
