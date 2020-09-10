@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Youtube from 'react-youtube';
-import "./CSS/SingleWorkoutPage.css"
+import './CSS/SingleWorkoutPage.css';
 
 let workoutTarget = '';
 let videoID = '';
@@ -23,20 +23,21 @@ class SingleWorkoutPage extends Component {
 			}
 		}
 		//videoID equates to the id needed on the react Youtube
-		videoID = workoutTarget.workout_url.split('?v=')[1];
+		videoID =
+			workoutTarget.workout_url && workoutTarget.workout_url.split('?v=')[1];
 		return (
-			<nav>
-				<span className="exerciseName" >{workoutTarget.exercise} </span>
+			<>
+				<span className='exerciseName'>{workoutTarget.exercise} </span>
 				<Youtube opts={opts} onReady={this._onReady} videoId={videoID} />
 				Primary Muscle Group: {workoutTarget.muscleGroupOne}
-                Secondary Muscle Group:{workoutTarget.muscleGroupTwo}
+				Secondary Muscle Group:{workoutTarget.muscleGroupTwo}
 				<img
 					src={workoutTarget.workout_img}
 					alt={workoutTarget.description}
 					width='500'
 					height='500'
 				/>
-			</nav>
+			</>
 		);
 	}
 }

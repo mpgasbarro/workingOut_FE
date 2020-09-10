@@ -6,12 +6,14 @@ import SingleWorkoutPage from './SingleWorkoutPage';
 class Pectorals extends Component {
 	render() {
 		// Mapping through API, for Pectoral exercise with a Beginner difficulty
+		
 		let workoutInfo = this.props.workout.map((pec) => {
 			if (
 				pec.muscleGroupOne === 'Pectorals' &&
 				pec.levelOfDifficulty === 'Beginner'
 			) {
 				return (
+					
 					<Link to={`/pectorals/${pec.exercise}`}>
 						<li>
 							{pec.exercise} - {pec.levelOfDifficulty}{' '}
@@ -52,7 +54,7 @@ class Pectorals extends Component {
 		});
 
 		return (
-			<div>
+			<div className="musclegroup">
 				<div className='beginner'>{workoutInfo} </div>
 				<div className='intermediate'>{workoutInfo2}</div>
 				<div className='advanced'>{workoutInfo3}</div>
