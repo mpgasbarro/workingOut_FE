@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import Pectorals from './Components/Pectorals';
 import Triceps from './Components/Triceps';
 import SingleWorkoutPage from './Components/SingleWorkoutPage';
+import Deltoids from './Components/Deltoids';
 
 let workoutUrl =
 	'https://immense-earth-33685.herokuapp.com/workout/?format=json';
@@ -78,6 +79,33 @@ class App extends Component {
 						<Route
 							exact
 							path='/triceps/:workout'
+							render={(routerProp) => {
+								return (
+									<SingleWorkoutPage
+										match={routerProp.match}
+										workoutData={this.state.workouts}
+									/>
+								);
+							}}
+						/>
+						<Link to='/deltoids'>
+							<img
+								src='https://oldschoollabs.com/wp-content/uploads/2019/07/Deltoid-Muscle-Breakdown.jpg'
+								alt='human body - Deltoids'
+								width='150'
+								height='150'
+							/>
+						</Link>
+						<Route
+							exact
+							path='/deltoids'
+							render={() => {
+								return <Deltoids workout={this.state.workouts} />;
+							}}
+						/>
+						<Route
+							exact
+							path='/deltoids/:workout'
 							render={(routerProp) => {
 								return (
 									<SingleWorkoutPage

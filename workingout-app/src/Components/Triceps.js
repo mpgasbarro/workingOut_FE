@@ -5,7 +5,7 @@ import SingleWorkoutPage from './SingleWorkoutPage';
 
 class Triceps extends Component {
 	render() {
-		// Mapping through API, for Pectoral exercise with a Beginner difficulty
+		// Mapping through API, for Triceps exercise with a Beginner difficulty
 		let workoutInfo = this.props.workout.map((tri) => {
 			if (
 				tri.muscleGroupOne === 'Triceps' &&
@@ -20,7 +20,7 @@ class Triceps extends Component {
 				);
 			}
 		});
-		// Mapping through API, for Pectoral exercise with a Intermediate difficulty
+		// Mapping through API, for Triceps exercise with a Intermediate difficulty
 		let workoutInfo2 = this.props.workout.map((tri) => {
 			if (
 				tri.muscleGroupOne === 'Triceps' &&
@@ -35,7 +35,7 @@ class Triceps extends Component {
 				);
 			}
 		});
-		// Mapping through API, for Pectoral exercise with an Advanced difficulty
+		// Mapping through API, for Triceps exercise with an Advanced difficulty
 		let workoutInfo3 = this.props.workout.map((tri) => {
 			if (
 				tri.muscleGroupOne === 'Triceps' &&
