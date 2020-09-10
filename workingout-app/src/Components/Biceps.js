@@ -5,14 +5,14 @@ import SingleWorkoutPage from './SingleWorkoutPage';
 class Biceps extends Component {
 	render() {
 		// Mapping through API, for Biceps exercise with a Beginner difficulty
-		let workoutInfo = this.props.workout.map((bicep) => {
+		let workoutInfo = this.props.workout.map((bicep, index) => {
 			if (
 				bicep.muscleGroupOne === 'Biceps' &&
 				bicep.levelOfDifficulty === 'Beginner'
 			) {
 				return (
 					<Link to={`/biceps/${bicep.exercise}`}>
-						<li>
+						<li key={index}>
 							{bicep.exercise} - {bicep.levelOfDifficulty}{' '}
 						</li>
 					</Link>
@@ -20,14 +20,14 @@ class Biceps extends Component {
 			}
 		});
 		// Mapping through API, for Biceps exercise with a Intermediate difficulty
-		let workoutInfo2 = this.props.workout.map((bicep) => {
+		let workoutInfo2 = this.props.workout.map((bicep, index) => {
 			if (
 				bicep.muscleGroupOne === 'Biceps' &&
 				bicep.levelOfDifficulty === 'Intermediate'
 			) {
 				return (
 					<Link to={`/biceps/${bicep.exercise}`}>
-						<li>
+						<li key={index}>
 							{bicep.exercise} - {bicep.levelOfDifficulty}{' '}
 						</li>
 					</Link>
@@ -35,14 +35,14 @@ class Biceps extends Component {
 			}
 		});
 		// Mapping through API, for Biceps exercise with an Advanced difficulty
-		let workoutInfo3 = this.props.workout.map((bicep) => {
+		let workoutInfo3 = this.props.workout.map((bicep, index) => {
 			if (
 				bicep.muscleGroupOne === 'Biceps' &&
 				bicep.levelOfDifficulty === 'Advanced'
 			) {
 				return (
 					<Link to={`/biceps/${bicep.exercise}`}>
-						<li>
+						<li key={index}>
 							{bicep.exercise} - {bicep.levelOfDifficulty}{' '}
 						</li>
 					</Link>

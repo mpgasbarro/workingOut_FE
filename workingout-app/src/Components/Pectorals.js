@@ -7,15 +7,14 @@ class Pectorals extends Component {
 	render() {
 		// Mapping through API, for Pectoral exercise with a Beginner difficulty
 		
-		let workoutInfo = this.props.workout.map((pec) => {
+		let workoutInfo = this.props.workout.map((pec, index) => {
 			if (
 				pec.muscleGroupOne === 'Pectorals' &&
 				pec.levelOfDifficulty === 'Beginner'
 			) {
 				return (
-					
 					<Link to={`/pectorals/${pec.exercise}`}>
-						<li>
+						<li key={index}>
 							{pec.exercise} - {pec.levelOfDifficulty}{' '}
 						</li>
 					</Link>
@@ -23,14 +22,14 @@ class Pectorals extends Component {
 			}
 		});
 		// Mapping through API, for Pectoral exercise with a Intermediate difficulty
-		let workoutInfo2 = this.props.workout.map((pec) => {
+		let workoutInfo2 = this.props.workout.map((pec, index) => {
 			if (
 				pec.muscleGroupOne === 'Pectorals' &&
 				pec.levelOfDifficulty === 'Intermediate'
 			) {
 				return (
 					<Link to={`/pectorals/${pec.exercise}`}>
-						<li>
+						<li key={index}>
 							{pec.exercise} - {pec.levelOfDifficulty}{' '}
 						</li>
 					</Link>
@@ -38,14 +37,14 @@ class Pectorals extends Component {
 			}
 		});
 		// Mapping through API, for Pectoral exercise with an Advanced difficulty
-		let workoutInfo3 = this.props.workout.map((pec) => {
+		let workoutInfo3 = this.props.workout.map((pec, index) => {
 			if (
 				pec.muscleGroupOne === 'Pectorals' &&
 				pec.levelOfDifficulty === 'Advanced'
 			) {
 				return (
 					<Link to={`/pectorals/${pec.exercise}`}>
-						<li>
+						<li key={index}>
 							{pec.exercise} - {pec.levelOfDifficulty}{' '}
 						</li>
 					</Link>
@@ -55,9 +54,10 @@ class Pectorals extends Component {
 
 		return (
 			<div className="musclegroup">
-				<div className='beginner'>{workoutInfo} </div>
-				<div className='intermediate'>{workoutInfo2}</div>
-				<div className='advanced'>{workoutInfo3}</div>
+				
+				<div className='beginner'>Beginner {workoutInfo} </div>
+				<div className='intermediate'>Intermediate{workoutInfo2}</div>
+				<div className='advanced'>Advanced{workoutInfo3}</div>
 
 				<Route
 					path='/pectorals/:workout'

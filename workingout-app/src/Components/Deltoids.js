@@ -5,14 +5,14 @@ import SingleWorkoutPage from './SingleWorkoutPage';
 class Deltoids extends Component {
 	render() {
 		// Mapping through API, for Deltoids exercise with a Beginner difficulty
-		let workoutInfo = this.props.workout.map((del) => {
+		let workoutInfo = this.props.workout.map((del, index) => {
 			if (
 				del.muscleGroupOne === 'Deltoids' &&
 				del.levelOfDifficulty === 'Beginner'
 			) {
 				return (
 					<Link to={`/deltoids/${del.exercise}`}>
-						<li>
+						<li key={index}>
 							{del.exercise} - {del.levelOfDifficulty}{' '}
 						</li>
 					</Link>
@@ -20,14 +20,14 @@ class Deltoids extends Component {
 			}
 		});
 		// Mapping through API, for Deltoids exercise with a Intermediate difficulty
-		let workoutInfo2 = this.props.workout.map((del) => {
+		let workoutInfo2 = this.props.workout.map((del, index) => {
 			if (
 				del.muscleGroupOne === 'Deltoids' &&
 				del.levelOfDifficulty === 'Intermediate'
 			) {
 				return (
 					<Link to={`/deltoids/${del.exercise}`}>
-						<li>
+						<li key={index}>
 							{del.exercise} - {del.levelOfDifficulty}{' '}
 						</li>
 					</Link>
@@ -35,14 +35,14 @@ class Deltoids extends Component {
 			}
 		});
 		// Mapping through API, for Deltoids exercise with an Advanced difficulty
-		let workoutInfo3 = this.props.workout.map((del) => {
+		let workoutInfo3 = this.props.workout.map((del, index) => {
 			if (
 				del.muscleGroupOne === 'Deltoids' &&
 				del.levelOfDifficulty === 'Advanced'
 			) {
 				return (
 					<Link to={`/deltoids/${del.exercise}`}>
-						<li>
+						<li key={index}>
 							{del.exercise} - {del.levelOfDifficulty}{' '}
 						</li>
 					</Link>

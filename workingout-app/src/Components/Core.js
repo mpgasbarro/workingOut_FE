@@ -5,14 +5,14 @@ import SingleWorkoutPage from './SingleWorkoutPage';
 class Core extends Component {
 	render() {
 		// Mapping through API, for Core exercise with a Beginner difficulty
-		let workoutInfo = this.props.workout.map((core) => {
+		let workoutInfo = this.props.workout.map((core, index) => {
 			if (
 				core.muscleGroupOne === ('Abdominals' || "Obliques")  &&
 				core.levelOfDifficulty === 'Beginner'
 			) {
 				return (
 					<Link to={`/core/${core.exercise}`}>
-						<li>
+						<li key={index}>
 							{core.exercise} - {core.levelOfDifficulty}{' '}
 						</li>
 					</Link>
@@ -20,14 +20,14 @@ class Core extends Component {
 			}
 		});
 		// Mapping through API, for Core exercise with a Intermediate difficulty
-		let workoutInfo2 = this.props.workout.map((core) => {
+		let workoutInfo2 = this.props.workout.map((core, index) => {
 			if (
 				core.muscleGroupOne === ('Abdominals' || "Obliques") &&
 				core.levelOfDifficulty === 'Intermediate'
 			) {
 				return (
 					<Link to={`/core/${core.exercise}`}>
-						<li>
+						<li key={index}>
 							{core.exercise} - {core.levelOfDifficulty}{' '}
 						</li>
 					</Link>
@@ -35,14 +35,14 @@ class Core extends Component {
 			}
 		});
 		// Mapping through API, for Core exercise with an Advanced difficulty
-		let workoutInfo3 = this.props.workout.map((core) => {
+		let workoutInfo3 = this.props.workout.map((core, index) => {
 			if (
 				core.muscleGroupOne === ('Abdominals' || "Obliques") &&
 				core.levelOfDifficulty === 'Advanced'
 			) {
 				return (
 					<Link to={`/core/${core.exercise}`}>
-						<li>
+						<li key={index}>
 							{core.exercise} - {core.levelOfDifficulty}{' '}
 						</li>
 					</Link>

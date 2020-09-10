@@ -9,6 +9,7 @@ import Deltoids from './Components/Deltoids';
 import Biceps from './Components/Biceps';
 import Core from './Components/Core';
 import Back from './Components/Back';
+import Create from './Components/Create';
 
 
 
@@ -32,6 +33,16 @@ class App extends Component {
 				console.error(err);
 			});
 	}
+	createWorkout = (workout) => {
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(workout),
+		};
+		fetch(`${workoutUrl}`, requestOptions)
+			.then((res) => res.json())
+			.then((data) => this.setState({ workouts: [...this.state.workouts, data] }));
+	};
 	render() {
 		return (
 			<main>
@@ -86,123 +97,136 @@ class App extends Component {
 						/>
 					</Link>
 				</section>
-        <Switch> 
-				<Route
-					exact
-					path='/pectorals'
-					render={() => {
-						return <Pectorals workout={this.state.workouts} />;
-					}}
-				/>
-				<Route
-					exact
-					path='/pectorals/:workout'
-					render={(routerProp) => {
-						return (
-							<SingleWorkoutPage
-								match={routerProp.match}
-								workoutData={this.state.workouts}
-							/>
-						);
-					}}
-				/>
+				<Switch>
+					<Route
+						exact
+						path='/pectorals'
+						render={() => {
+							return <Pectorals workout={this.state.workouts} />;
+						}}
+					/>
+					<Route
+						exact
+						path='/pectorals/:workout'
+						render={(routerProp) => {
+							return (
+								<SingleWorkoutPage
+									match={routerProp.match}
+									workoutData={this.state.workouts}
+								/>
+							);
+						}}
+					/>
 
+					<Route
+						exact
+						path='/triceps'
+						render={() => {
+							return <Triceps workout={this.state.workouts} />;
+						}}
+					/>
+					<Route
+						exact
+						path='/triceps/:workout'
+						render={(routerProp) => {
+							return (
+								<SingleWorkoutPage
+									match={routerProp.match}
+									workoutData={this.state.workouts}
+								/>
+							);
+						}}
+					/>
+					<Route
+						exact
+						path='/deltoids'
+						render={() => {
+							return <Deltoids workout={this.state.workouts} />;
+						}}
+					/>
+					<Route
+						exact
+						path='/deltoids/:workout'
+						render={(routerProp) => {
+							return (
+								<SingleWorkoutPage
+									match={routerProp.match}
+									workoutData={this.state.workouts}
+								/>
+							);
+						}}
+					/>
+					<Route
+						exact
+						path='/biceps'
+						render={() => {
+							return <Biceps workout={this.state.workouts} />;
+						}}
+					/>
+					<Route
+						exact
+						path='/biceps/:workout'
+						render={(routerProp) => {
+							return (
+								<SingleWorkoutPage
+									match={routerProp.match}
+									workoutData={this.state.workouts}
+								/>
+							);
+						}}
+					/>
+					<Route
+						exact
+						path='/core'
+						render={() => {
+							return <Core workout={this.state.workouts} />;
+						}}
+					/>
+					<Route
+						exact
+						path='/core/:workout'
+						render={(routerProp) => {
+							return (
+								<SingleWorkoutPage
+									match={routerProp.match}
+									workoutData={this.state.workouts}
+								/>
+							);
+						}}
+					/>
+					<Route
+						exact
+						path='/back'
+						render={() => {
+							return <Back workout={this.state.workouts} />;
+						}}
+					/>
+					<Route
+						exact
+						path='/back/:workout'
+						render={(routerProp) => {
+							return (
+								<SingleWorkoutPage
+									match={routerProp.match}
+									workoutData={this.state.workouts}
+								/>
+							);
+						}}
+					/>
+				</Switch>
 				<Route
 					exact
-					path='/triceps'
-					render={() => {
-						return <Triceps workout={this.state.workouts} />;
-					}}
-				/>
-				<Route
-					exact
-					path='/triceps/:workout'
+					path='/create'
 					render={(routerProp) => {
 						return (
-							<SingleWorkoutPage
+							<Create
+								newWorkout={this.state.newWorkout}
 								match={routerProp.match}
-								workoutData={this.state.workouts}
+								createWorkout={this.createWorkout}
 							/>
 						);
 					}}
 				/>
-				<Route
-					exact
-					path='/deltoids'
-					render={() => {
-						return <Deltoids workout={this.state.workouts} />;
-					}}
-				/>
-				<Route
-					exact
-					path='/deltoids/:workout'
-					render={(routerProp) => {
-						return (
-							<SingleWorkoutPage
-								match={routerProp.match}
-								workoutData={this.state.workouts}
-							/>
-						);
-					}}
-				/>
-				<Route
-					exact
-					path='/biceps'
-					render={() => {
-						return <Biceps workout={this.state.workouts} />;
-					}}
-				/>
-				<Route
-					exact
-					path='/biceps/:workout'
-					render={(routerProp) => {
-						return (
-							<SingleWorkoutPage
-								match={routerProp.match}
-								workoutData={this.state.workouts}
-							/>
-						);
-					}}
-				/>
-				<Route
-					exact
-					path='/core'
-					render={() => {
-						return <Core workout={this.state.workouts} />;
-					}}
-				/>
-				<Route
-					exact
-					path='/core/:workout'
-					render={(routerProp) => {
-						return (
-							<SingleWorkoutPage
-								match={routerProp.match}
-								workoutData={this.state.workouts}
-							/>
-						);
-					}}
-				/>
-				<Route
-					exact
-					path='/back'
-					render={() => {
-						return <Back workout={this.state.workouts} />;
-					}}
-				/>
-				<Route
-					exact
-					path='/back/:workout'
-					render={(routerProp) => {
-						return (
-							<SingleWorkoutPage
-								match={routerProp.match}
-								workoutData={this.state.workouts}
-							/>
-						);
-					}}
-				/>
-      </Switch>
 			</main>
 		);
 	}

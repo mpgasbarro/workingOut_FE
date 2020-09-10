@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 
 function Header() {
@@ -7,7 +8,10 @@ function Header() {
 		<div>
 			<nav>
 				<Link to='/'>
-					Home
+					<Button variant='outline-info'> Home </Button>
+				</Link>
+				<Link to='/create' className='header-middle'>
+					<Button variant='outline-info'>New Workout</Button>
 				</Link>
 			</nav>
 		</div>

@@ -5,14 +5,14 @@ import SingleWorkoutPage from './SingleWorkoutPage';
 class Back extends Component {
 	render() {
 		// Mapping through API, for Back exercise with a Beginner difficulty
-		let workoutInfo = this.props.workout.map((back) => {
+		let workoutInfo = this.props.workout.map((back, index) => {
 			if (
 				back.muscleGroupOne === 'Latissimus Dorsi' &&
 				back.levelOfDifficulty === 'Beginner'
 			) {
 				return (
 					<Link to={`/back/${back.exercise}`}>
-						<li>
+						<li key={index}>
 							{back.exercise} - {back.levelOfDifficulty}{' '}
 						</li>
 					</Link>
@@ -20,14 +20,14 @@ class Back extends Component {
 			}
 		});
 		// Mapping through API, for Back exercise with a Intermediate difficulty
-		let workoutInfo2 = this.props.workout.map((back) => {
+		let workoutInfo2 = this.props.workout.map((back, index) => {
 			if (
 				back.muscleGroupOne === 'Latissimus Dorsi' &&
 				back.levelOfDifficulty === 'Intermediate'
 			) {
 				return (
 					<Link to={`/back/${back.exercise}`}>
-						<li>
+						<li key={index}>
 							{back.exercise} - {back.levelOfDifficulty}{' '}
 						</li>
 					</Link>
@@ -35,14 +35,14 @@ class Back extends Component {
 			}
 		});
 		// Mapping through API, for Back exercise with an Advanced difficulty
-		let workoutInfo3 = this.props.workout.map((back) => {
+		let workoutInfo3 = this.props.workout.map((back, index) => {
 			if (
 				back.muscleGroupOne === 'Latissimus Dorsi' &&
 				back.levelOfDifficulty === 'Advanced'
 			) {
 				return (
 					<Link to={`/back/${back.exercise}`}>
-						<li>
+						<li key={index}>
 							{back.exercise} - {back.levelOfDifficulty}{' '}
 						</li>
 					</Link>
