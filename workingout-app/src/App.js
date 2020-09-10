@@ -3,8 +3,8 @@ import { Route, Link } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header';
 import Pectorals from './Components/Pectorals';
-import SingleWorkoutPage from './Components/SingleWorkoutPage'
-
+import Triceps from './Components/Triceps';
+import SingleWorkoutPage from './Components/SingleWorkoutPage';
 
 let workoutUrl =
 	'https://immense-earth-33685.herokuapp.com/workout/?format=json';
@@ -12,10 +12,9 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			  workouts: [],
+			workouts: [],
 		};
 	}
-
 	componentDidMount() {
 		fetch(`${workoutUrl}`)
 			.then((res) => res.json())
@@ -60,6 +59,35 @@ class App extends Component {
 							);
 						}}
 					/>
+					<Link to='/triceps'>
+						<img
+							src='https://www.peakptfitness.com/wp-content/uploads/2017/04/Fotolia_110740617_S-300x300.jpg'
+							alt='human body - Triceps'
+							width='150'
+							height='150'
+						/>
+					</Link>
+					<main>
+						<Route
+							exact
+							path='/triceps'
+							render={() => {
+								return <Triceps workout={this.state.workouts} />;
+							}}
+						/>
+						<Route
+							exact
+							path='/triceps/:workout'
+							render={(routerProp) => {
+								return (
+									<SingleWorkoutPage
+										match={routerProp.match}
+										workoutData={this.state.workouts}
+									/>
+								);
+							}}
+						/>
+					</main>
 				</main>
 			</div>
 		);
