@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Youtube from 'react-youtube';
 import './CSS/SingleWorkoutPage.css';
+import Button from 'react-bootstrap/Button';
 
 let workoutTarget = '';
 let videoID = '';
@@ -28,6 +30,9 @@ class SingleWorkoutPage extends Component {
 		return (
 			<div>
 				<span className='exerciseName'>{workoutTarget.exercise} </span>
+				<Link className='updateButton' to={`/update/${workoutTarget._id}`}>
+					<Button variant='outline-warning'>Update</Button>
+				</Link>
 				<div className='workoutDetails'>
 					<Youtube
 						className='youtube'
@@ -43,7 +48,7 @@ class SingleWorkoutPage extends Component {
 						height='500'
 					/>
 				</div>
-				<p className="workoutDes">{workoutTarget.description}</p>
+				<p className='workoutDes'>{workoutTarget.description}</p>
 				<div className='musclesUsed'>
 					<li className='primaryMuslce'>
 						<em>

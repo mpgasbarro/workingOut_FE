@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import "./CSS/Update.css"
 
 class Update extends Component {
 	constructor() {
@@ -33,74 +34,91 @@ class Update extends Component {
 		}
 		return (
 			<div className='update'>
-				<Form.Group className='updateForm'>
-					<label type='text' for='exercise'>
+				<form className='updateForm'>
+					<label type='text' htmlFor='exercise'>
 						Exercise:
 					</label>
-					<Form.Control
+					<input
 						onChange={this.onChange}
 						type='text'
 						id='exercise'
 						name='exercise'
 					/>
-					<label type='text' for='muscleGroupOne'>
+					<label type='text' htmlFor='muscleGroupOne'>
 						Main Muscle Group:
 					</label>
-					<Form.Control
+					<select
 						onChange={this.onChange}
-						type='text'
 						id='muscleGroupOne'
-						name='muscleGroupOne'
-					/>
-					<label type='text' for='muscleGroupTwo'>
+						name='muscleGroupOne'>
+						<option value='Triceps'> Triceps </option>
+						<option value='Pectorals'> Pectorals </option>
+						<option value='Deltoids'> Deltoids </option>
+						<option value='Biceps'> Biceps </option>
+						<option value='Back'> Latissimus Dorsi </option>
+						<option value='Abdominals'> Abdominals </option>
+					</select>
+					<label type='text' htmlFor='muscleGroupTwo'>
 						Secondary Muscle Group:
 					</label>
-					<Form.Control
+					<select
 						onChange={this.onChange}
-						type='text'
-						id='muscleGroupTwo'
-						name='muscleGroupTwo'
-					/>
-					<label type='text' for='muscleGroupThree '>
+						id='muscleGroupOne'
+						name='muscleGroupOne'>
+						<option value='Triceps'> Triceps </option>
+						<option value='Pectorals'> Pectorals </option>
+						<option value='Deltoids'> Deltoids </option>
+						<option value='Biceps'> Biceps </option>
+						<option value='Back'> Latissimus Dorsi </option>
+						<option value='Abdominals'> Abdominals </option>
+					</select>
+					<label type='text' htmlFor='muscleGroupThree '>
 						Tertiary Muscle Group :
 					</label>
-					<Form.Control
+					<select
 						onChange={this.onChange}
-						type='text'
-						id='muscleGroupThree '
-						name='muscleGroupThree '
-					/>
-					<label type='text' for='levelOfDifficulty'>
+						id='muscleGroupOne'
+						name='muscleGroupOne'>
+						<option value='Triceps'> Triceps </option>
+						<option value='Pectorals'> Pectorals </option>
+						<option value='Deltoids'> Deltoids </option>
+						<option value='Biceps'> Biceps </option>
+						<option value='Back'> Latissimus Dorsi </option>
+						<option value='Abdominals'> Abdominals </option>
+					</select>
+					<label type='text' htmlFor='levelOfDifficulty'>
 						Level Of Difficulty:
 					</label>
-					<Form.Control
+					<select
 						onChange={this.onChange}
-						type='text'
 						id='levelOfDifficulty'
-						name='levelOfDifficulty'
-					/>
-					<label type='text' for='workout_img'>
+						name='levelOfDifficulty'>
+						<option value='Beginner'> Beginner </option>
+						<option value='Intermediate'> Intermediate </option>
+						<option value='Advanced'> Advanced </option>
+					</select>
+					<label type='text' htmlFor='workout_img'>
 						Workout Image:
 					</label>
-					<Form.Control
+					<input
 						onChange={this.onChange}
 						type='text'
 						id='workout_img'
 						name='workout_img'
 					/>
-					<label type='text' for='workout_url'>
+					<label type='text' htmlFor='workout_url'>
 						Workout Video Url:
 					</label>
-					<Form.Control
+					<input
 						onChange={this.onChange}
 						type='text'
 						id='workout_url'
 						name='workout_url'
 					/>
-					<label type='text' for='description'>
+					<label type='text' htmlFor='description'>
 						Workout Description:
 					</label>
-					<Form.Control
+					<input
 						onChange={this.onChange}
 						type='text'
 						id='description'
@@ -112,7 +130,7 @@ class Update extends Component {
 						variant='outline-success'>
 						Submit
 					</Button>
-				</Form.Group>
+				</form>
 			</div>
 		);
 	}

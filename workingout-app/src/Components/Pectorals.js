@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import './CSS/Pectorals.css';
 import SingleWorkoutPage from './SingleWorkoutPage';
 
+
 class Pectorals extends Component {
 	render() {
 		// Mapping through API, for Pectoral exercise with a Beginner difficulty
@@ -53,20 +54,20 @@ class Pectorals extends Component {
 		});
 
 		return (
-			<div className="musclegroup">
-				
-				<div className='beginner'>Beginner {workoutInfo} </div>
-				<div className='intermediate'>Intermediate{workoutInfo2}</div>
-				<div className='advanced'>Advanced{workoutInfo3}</div>
+			
+				<div className='musclegroup'>
+					<div className='beginner'>Beginner {workoutInfo} </div>
+					<div className='intermediate'>Intermediate{workoutInfo2}</div>
+					<div className='advanced'>Advanced{workoutInfo3}</div>
 
-				<Route
-					path='/pectorals/:workout'
-					exact
-					render={(routerProp) => {
-						return <SingleWorkoutPage match={routerProp.match} />;
-					}}
-				/>
-			</div>
+					<Route
+						path='/pectorals/:workout'
+						exact
+						render={(routerProp) => {
+							return <SingleWorkoutPage match={routerProp.match} />;
+						}}
+					/>
+				</div>
 		);
 	}
 }

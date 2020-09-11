@@ -16,7 +16,7 @@ import Update from './Components/Update';
 
 
 let workoutUrl =
-	'https://immense-earth-33685.herokuapp.com/workout/?format=json';
+	'https://immense-earth-33685.herokuapp.com/workout/';
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -97,7 +97,7 @@ class App extends Component {
 						/>
 					</Link>
 					<Link to='/core'>
-						<img classname="core"
+						<img className="core"
 							src='https://image.jimcdn.com/app/cms/image/transf/dimension=185x10000:format=jpg/path/sb706e6011cc48302/image/if120ec98e7652429/version/1541689214/abs-abdominals-muscle-group-exercises.jpg'
 							alt='human body - core'
 							width='150'

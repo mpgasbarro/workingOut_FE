@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import Button from 'react-bootstrap/Button';
+import './CSS/Create.css';
 
 class Create extends Component {
 	constructor() {
 		super();
 		this.state = {
 			exercise: '',
-			muscleGroupOne: '',
-			muscleGroupTwo: '',
-			muscleGroupThree: '',
-			levelOfDifficulty: '',
+			muscleGroupOne: 'Triceps',
+			muscleGroupTwo: 'Triceps',
+			muscleGroupThree: 'Triceps',
+			levelOfDifficulty: 'Beginner',
 			workout_img: '',
 			workout_url: '',
+			description: '',
 			redirect: false,
 		};
 	}
@@ -30,12 +32,13 @@ class Create extends Component {
 	clearForm = () => {
 		this.setState({
 			exercise: '',
-			muscleGroupOne: '',
-			muscleGroupTwo: '',
-			muscleGroupThree: '',
-			levelOfDifficulty: '',
+			muscleGroupOne: 'Triceps',
+			muscleGroupTwo: 'Triceps',
+			muscleGroupThree: 'Triceps',
+			levelOfDifficulty: 'Beginner',
 			workout_img: '',
 			workout_url: '',
+			description: '',
 		});
 	};
 	render() {
@@ -45,7 +48,7 @@ class Create extends Component {
 		return (
 			<div className='create'>
 				<form className='createForm'>
-					<label type='text' for='exercise'>
+					<label type='text' htmlFor='exercise'>
 						Exercise:
 					</label>
 					<input
@@ -54,7 +57,7 @@ class Create extends Component {
 						id='exercise'
 						name='exercise'
 					/>
-					<label type='muscleGroupOne' for='muscleGroupOne'>
+					<label type='muscleGroupOne' htmlFor='muscleGroupOne'>
 						Main Muscle Group:
 					</label>
 					<select
@@ -68,7 +71,7 @@ class Create extends Component {
 						<option value='Back'> Latissimus Dorsi </option>
 						<option value='Abdominals'> Abdominals </option>
 					</select>
-					<label type='text' for='muscleGroupTwo'>
+					<label type='text' htmlFor='muscleGroupTwo'>
 						Secondary Muscle Group:
 					</label>
 					<select
@@ -82,7 +85,7 @@ class Create extends Component {
 						<option value='Back'> Latissimus Dorsi </option>
 						<option value='Abdominals'> Abdominals </option>
 					</select>
-					<label type='text' for='muscleGroupThree'>
+					<label type='text' htmlFor='muscleGroupThree'>
 						Tertiary Muscle Group:
 					</label>
 					<select
@@ -96,7 +99,7 @@ class Create extends Component {
 						<option value='Back'> Latissimus Dorsi </option>
 						<option value='Abdominals'> Abdominals </option>
 					</select>
-					<label type='text' for='levelOfDifficulty'>
+					<label type='text' htmlFor='levelOfDifficulty'>
 						Level of Difficulty:
 					</label>
 					<select
@@ -107,7 +110,7 @@ class Create extends Component {
 						<option value='Intermediate'> Intermediate </option>
 						<option value='Advanced'> Advanced </option>
 					</select>
-					<label type='text' for='workout_img'>
+					<label type='text' htmlFor='workout_img'>
 						Workout Image:
 					</label>
 					<input
@@ -116,7 +119,7 @@ class Create extends Component {
 						id='workout_img'
 						name='workout_img'
 					/>
-					<label type='text' for='workout_url'>
+					<label type='text' htmlFor='workout_url'>
 						Workout Video Link:
 					</label>
 					<input
@@ -124,6 +127,15 @@ class Create extends Component {
 						type='text'
 						id='workout_url'
 						name='workout_url'
+					/>
+					<label type='text' htmlFor='description'>
+						Description:
+					</label>
+					<input
+						onChange={this.onChange}
+						type='text'
+						id='description'
+						name='description'
 					/>
 					<Button
 						onClick={this.handleSubmit}
