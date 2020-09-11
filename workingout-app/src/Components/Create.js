@@ -19,6 +19,7 @@ class Create extends Component {
 
 	onChange = (event) => {
 		this.setState({ [event.target.id]: event.target.value });
+		console.log('this also worked');
 	};
 	handleSubmit = (event) => {
 		console.log('this worked');
@@ -54,41 +55,58 @@ class Create extends Component {
 						name='exercise'
 					/>
 					<label type='muscleGroupOne' for='muscleGroupOne'>
-						Muscle Group 1:
+						Main Muscle Group:
 					</label>
-					<input
+					<select
 						onChange={this.onChange}
-						type='text'
 						id='muscleGroupOne'
-						name='muscleGroupOne'
-					/>
+						name='muscleGroupOne'>
+						<option value='Triceps'> Triceps </option>
+						<option value='Pectorals'> Pectorals </option>
+						<option value='Deltoids'> Deltoids </option>
+						<option value='Biceps'> Biceps </option>
+						<option value='Back'> Latissimus Dorsi </option>
+						<option value='Abdominals'> Abdominals </option>
+					</select>
 					<label type='text' for='muscleGroupTwo'>
-						Muscle Group Two:
+						Secondary Muscle Group:
 					</label>
-					<input
+					<select
 						onChange={this.onChange}
-						type='text'
 						id='muscleGroupTwo'
-						name='muscleGroupTwo'
-					/>
+						name='muscleGroupTwo'>
+						<option value='Triceps'> Triceps </option>
+						<option value='Pectorals'> Pectorals </option>
+						<option value='Deltoids'> Deltoids </option>
+						<option value='Biceps'> Biceps </option>
+						<option value='Back'> Latissimus Dorsi </option>
+						<option value='Abdominals'> Abdominals </option>
+					</select>
 					<label type='text' for='muscleGroupThree'>
-						Muscle Group Three:
+						Tertiary Muscle Group:
 					</label>
-					<input
+					<select
 						onChange={this.onChange}
-						type='text'
 						id='muscleGroupThree'
-						name='muscleGroupThree'
-					/>
+						name='muscleGroupThree'>
+						<option value='Triceps'> Triceps </option>
+						<option value='Pectorals'> Pectorals </option>
+						<option value='Deltoids'> Deltoids </option>
+						<option value='Biceps'> Biceps </option>
+						<option value='Back'> Latissimus Dorsi </option>
+						<option value='Abdominals'> Abdominals </option>
+					</select>
 					<label type='text' for='levelOfDifficulty'>
 						Level of Difficulty:
 					</label>
-					<input
+					<select
 						onChange={this.onChange}
-						type='text'
 						id='levelOfDifficulty'
-						name='levelOfDifficulty'
-					/>
+						name='levelOfDifficulty'>
+						<option value='Beginner'> Beginner </option>
+						<option value='Intermediate'> Intermediate </option>
+						<option value='Advanced'> Advanced </option>
+					</select>
 					<label type='text' for='workout_img'>
 						Workout Image:
 					</label>

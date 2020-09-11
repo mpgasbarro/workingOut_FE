@@ -213,20 +213,20 @@ class App extends Component {
 							);
 						}}
 					/>
+					<Route
+						exact
+						path='/create'
+						render={(routerProp) => {
+							return (
+								<Create
+									newWorkout={this.state.newWorkout}
+									match={routerProp.match}
+									createWorkout={this.createWorkout}
+								/>
+							);
+						}}
+					/>
 				</Switch>
-				<Route
-					exact
-					path='/create'
-					render={(routerProp) => {
-						return (
-							<Create
-								newWorkout={this.state.newWorkout}
-								match={routerProp.match}
-								createWorkout={this.createWorkout}
-							/>
-						);
-					}}
-				/>
 			</main>
 		);
 	}
