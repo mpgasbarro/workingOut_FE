@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-import './App.css';
+import './Components/CSS/App.css';
 import Header from './Components/Header';
 import SingleWorkoutPage from './Components/SingleWorkoutPage';
 import Pectorals from './Components/Pectorals';
@@ -10,6 +10,7 @@ import Biceps from './Components/Biceps';
 import Core from './Components/Core';
 import Back from './Components/Back';
 import Create from './Components/Create';
+import Update from './Components/Update';
 
 
 
@@ -41,15 +42,30 @@ class App extends Component {
 		};
 		fetch(`${workoutUrl}`, requestOptions)
 			.then((res) => res.json())
-			.then((data) => this.setState({ workouts: [...this.state.workouts, data] }));
+			.then((data) =>
+				this.setState({ workouts: [...this.state.workouts, data] })
+			);
 	};
+	updateWorkout = (workout) => {
+		const requestOptions = {
+			method: 'PATCH',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(workout),
+		};
+
+		fetch(`${workoutUrl}/${workout.id}`, requestOptions)
+			.then((res) => res.json())
+			//add logic to select specific game
+			.then((data) => this.setState({ games: [...this.state.workouts, data] }));
+	};
+
 	render() {
 		return (
 			<main>
 				<Header />
-				<section>
+				<section className="bodyPartPics">
 					<Link to='/pectorals'>
-						<img
+						<img className="Pecs"
 							src='https://st2.depositphotos.com/1909187/10981/i/950/depositphotos_109811754-stock-photo-chest-muscles-pectoralis-major-and.jpg'
 							alt='human body - chest'
 							width='150'
@@ -57,7 +73,7 @@ class App extends Component {
 						/>
 					</Link>
 					<Link to='/triceps'>
-						<img
+						<img className="Tri"
 							src='https://www.peakptfitness.com/wp-content/uploads/2017/04/Fotolia_110740617_S-300x300.jpg'
 							alt='human body - Triceps'
 							width='150'
@@ -65,7 +81,7 @@ class App extends Component {
 						/>
 					</Link>
 					<Link to='/deltoids'>
-						<img
+						<img className="Delt"
 							src='https://oldschoollabs.com/wp-content/uploads/2019/07/Deltoid-Muscle-Breakdown.jpg'
 							alt='human body - Deltoids'
 							width='150'
@@ -73,7 +89,7 @@ class App extends Component {
 						/>
 					</Link>
 					<Link to='/biceps'>
-						<img
+						<img className="Bi"
 							src='https://iaom-us.com/wp-content/uploads/2018/11/Fotolia_110740333_S-693x675.jpg'
 							alt='human body - biceps'
 							width='150'
@@ -81,15 +97,15 @@ class App extends Component {
 						/>
 					</Link>
 					<Link to='/core'>
-						<img
+						<img classname="core"
 							src='https://image.jimcdn.com/app/cms/image/transf/dimension=185x10000:format=jpg/path/sb706e6011cc48302/image/if120ec98e7652429/version/1541689214/abs-abdominals-muscle-group-exercises.jpg'
-							alt='human body - chest'
+							alt='human body - core'
 							width='150'
 							height='150'
 						/>
 					</Link>
 					<Link to='/back'>
-						<img
+						<img className="back"
 							src='https://spinalbackrack.com/wp-content/uploads/2019/01/paraspinal-muscles.jpg'
 							alt='human body - back'
 							width='150'
@@ -222,6 +238,19 @@ class App extends Component {
 									newWorkout={this.state.newWorkout}
 									match={routerProp.match}
 									createWorkout={this.createWorkout}
+								/>
+							);
+						}}
+					/>
+					<Route
+						exact
+						path='/update/:id'
+						render={(routerProp) => {
+							return (
+								<Update
+									match={routerProp.match}
+									updateWorkout={this.updateWorkout}
+									workout={this.state.workouts}
 								/>
 							);
 						}}

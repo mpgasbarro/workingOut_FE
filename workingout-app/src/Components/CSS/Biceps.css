@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around
 }
-.pecList {
+.biList {
     list-style-type: square;
     margin: 15px 15px 15px 15px
 } 

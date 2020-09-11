@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import SingleWorkoutPage from './SingleWorkoutPage';
+import "./CSS/Biceps.css"
 
 class Biceps extends Component {
 	render() {
@@ -12,8 +13,8 @@ class Biceps extends Component {
 			) {
 				return (
 					<Link to={`/biceps/${bicep.exercise}`}>
-						<li key={index}>
-							{bicep.exercise} - {bicep.levelOfDifficulty}{' '}
+						<li className='biList' key={index}>
+							{bicep.exercise} 
 						</li>
 					</Link>
 				);
@@ -27,8 +28,8 @@ class Biceps extends Component {
 			) {
 				return (
 					<Link to={`/biceps/${bicep.exercise}`}>
-						<li key={index}>
-							{bicep.exercise} - {bicep.levelOfDifficulty}{' '}
+						<li className='biList' key={index}>
+							{bicep.exercise}
 						</li>
 					</Link>
 				);
@@ -42,18 +43,18 @@ class Biceps extends Component {
 			) {
 				return (
 					<Link to={`/biceps/${bicep.exercise}`}>
-						<li key={index}>
-							{bicep.exercise} - {bicep.levelOfDifficulty}{' '}
+						<li className='biList' key={index}>
+							{bicep.exercise}
 						</li>
 					</Link>
 				);
 			}
 		});
 		return (
-			<div>
-				<div className='beginner'>{workoutInfo} </div>
-				<div className='intermediate'>{workoutInfo2}</div>
-				<div className='advanced'>{workoutInfo3}</div>
+			<div className='musclegroup'>
+				<div className='beginner'> Beginner {workoutInfo} </div>
+				<div className='intermediate'> Intermediate{workoutInfo2}</div>
+				<div className='advanced'> Advanced {workoutInfo3}</div>
 
 				<Route
 					path='/biceps/:workout'

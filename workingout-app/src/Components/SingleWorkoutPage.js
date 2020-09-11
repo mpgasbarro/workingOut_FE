@@ -26,18 +26,39 @@ class SingleWorkoutPage extends Component {
 		videoID =
 			workoutTarget.workout_url && workoutTarget.workout_url.split('?v=')[1];
 		return (
-			<>
+			<div>
 				<span className='exerciseName'>{workoutTarget.exercise} </span>
-				<Youtube opts={opts} onReady={this._onReady} videoId={videoID} />
-				Primary Muscle Group: {workoutTarget.muscleGroupOne}
-				Secondary Muscle Group:{workoutTarget.muscleGroupTwo}
-				<img
-					src={workoutTarget.workout_img}
-					alt={workoutTarget.description}
-					width='500'
-					height='500'
-				/>
-			</>
+				<div className='workoutDetails'>
+					<Youtube
+						className='youtube'
+						opts={opts}
+						onReady={this._onReady}
+						videoId={videoID}
+					/>
+					<img
+						className='workoutPic'
+						src={workoutTarget.workout_img}
+						alt={workoutTarget.description}
+						width='500'
+						height='500'
+					/>
+				</div>
+				<p className="workoutDes">{workoutTarget.description}</p>
+				<div className='musclesUsed'>
+					<li className='primaryMuslce'>
+						<em>
+							<b>Primary Muscle Group:</b>
+						</em>{' '}
+						{workoutTarget.muscleGroupOne}
+					</li>
+					<li className='secondaryMuscle'>
+						<em>
+							<b>Secondary Muscle Group: </b>
+						</em>
+						{workoutTarget.muscleGroupTwo}
+					</li>
+				</div>
+			</div>
 		);
 	}
 }

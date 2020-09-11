@@ -14,8 +14,8 @@ class Pectorals extends Component {
 			) {
 				return (
 					<Link to={`/pectorals/${pec.exercise}`}>
-						<li key={index}>
-							{pec.exercise} - {pec.levelOfDifficulty}{' '}
+						<li className="pecList" key={index}>
+							{pec.exercise}
 						</li>
 					</Link>
 				);
@@ -29,8 +29,8 @@ class Pectorals extends Component {
 			) {
 				return (
 					<Link to={`/pectorals/${pec.exercise}`}>
-						<li key={index}>
-							{pec.exercise} - {pec.levelOfDifficulty}{' '}
+						<li className='pecList' key={index}>
+							{pec.exercise}
 						</li>
 					</Link>
 				);
@@ -44,8 +44,8 @@ class Pectorals extends Component {
 			) {
 				return (
 					<Link to={`/pectorals/${pec.exercise}`}>
-						<li key={index}>
-							{pec.exercise} - {pec.levelOfDifficulty}{' '}
+						<li className='pecList' key={index}>
+							{pec.exercise}
 						</li>
 					</Link>
 				);

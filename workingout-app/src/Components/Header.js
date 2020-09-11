@@ -11,7 +11,7 @@ function Header() {
 					<Button variant='outline-info'> Home </Button>
 				</Link>
 				<Link to='/create' className='header-middle'>
-					<Button variant='outline-info'>New Workout</Button>
+					<Button variant='outline-info'>New Exercise</Button>
 				</Link>
 			</nav>
 		</div>

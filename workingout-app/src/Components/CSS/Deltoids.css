@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around
 }
-.pecList {
+.deltList {
     list-style-type: square;
-    margin: 15px 15px 15px 15px
+    margin: 15px 15px 15px 15px;
 } 

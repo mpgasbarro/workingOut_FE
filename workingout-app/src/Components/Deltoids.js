@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import SingleWorkoutPage from './SingleWorkoutPage';
+import "./CSS/Deltoids.css"
 
 class Deltoids extends Component {
 	render() {
@@ -12,8 +13,8 @@ class Deltoids extends Component {
 			) {
 				return (
 					<Link to={`/deltoids/${del.exercise}`}>
-						<li key={index}>
-							{del.exercise} - {del.levelOfDifficulty}{' '}
+						<li className='deltList' key={index}>
+							{del.exercise}
 						</li>
 					</Link>
 				);
@@ -27,8 +28,8 @@ class Deltoids extends Component {
 			) {
 				return (
 					<Link to={`/deltoids/${del.exercise}`}>
-						<li key={index}>
-							{del.exercise} - {del.levelOfDifficulty}{' '}
+						<li className='deltList' key={index}>
+							{del.exercise}
 						</li>
 					</Link>
 				);
@@ -42,8 +43,8 @@ class Deltoids extends Component {
 			) {
 				return (
 					<Link to={`/deltoids/${del.exercise}`}>
-						<li key={index}>
-							{del.exercise} - {del.levelOfDifficulty}{' '}
+						<li className="deltList" key={index} >
+							{del.exercise}
 						</li>
 					</Link>
 				);
@@ -51,10 +52,10 @@ class Deltoids extends Component {
 		});
 
 		return (
-			<div>
-				<div className='beginner'>{workoutInfo} </div>
-				<div className='intermediate'>{workoutInfo2}</div>
-				<div className='advanced'>{workoutInfo3}</div>
+			<div className="musclegroup">
+				<div className='beginner'> Beginner {workoutInfo} </div>
+				<div className='intermediate'> Intermediate{workoutInfo2}</div>
+				<div className='advanced'> Advanced {workoutInfo3}</div>
 
 				<Route
 					path='/deltoids/:workout'

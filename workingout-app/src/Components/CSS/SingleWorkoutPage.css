@@ -1,3 +1,23 @@
+.workoutDetails {
+	display: flex;
+	justify-content: space-around;
+}
+
+.youtube {
+	justify-content: flex-start;
+}
+
+.workoutPic {
+	justify-content: flex-end;
+}
 .exerciseName {
-    font-size: 50px;
+	font-size: 40px;
+}
+
+.musclesUsed {
+	list-style-type: none;
+}
+
+.workoutDes {
+	text-indent: 30px;
 }
