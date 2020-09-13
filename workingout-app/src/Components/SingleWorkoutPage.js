@@ -31,10 +31,13 @@ class SingleWorkoutPage extends Component {
 			console.log(`/update/${workoutTarget.id}`);
 		return (
 			<div>
-				<span className='exerciseName'>{workoutTarget.exercise} </span>
-				<Link className='updateButton' to={`/update/${workoutTarget._id}`}>
-					<Button variant='outline-warning'>Update</Button>
+				<span className='exerciseName'>{workoutTarget.exercise}
+				<Link  to={`/update/${workoutTarget._id}`}>
+					<Button variant='outline-secondary'>
+						Update
+					</Button>
 				</Link>
+				</span>
 				<div className='deleteButton'>
 					<Route
 						exact
@@ -64,20 +67,22 @@ class SingleWorkoutPage extends Component {
 						height='500'
 					/>
 				</div>
+				<div className="desAndMus">
 				<p className='workoutDes'>{workoutTarget.description}</p>
 				<div className='musclesUsed'>
-					<li className='primaryMuslce'>
+					<li className='primaryMuscle'>
 						<em>
-							<b>Primary Muscle Group:</b>
+							<b className='primGroup'>Primary Muscle Group:</b>
 						</em>{' '}
 						{workoutTarget.muscleGroupOne}
 					</li>
 					<li className='secondaryMuscle'>
 						<em>
-							<b>Secondary Muscle Group: </b>
+							<b className='secondGroup'>Secondary Muscle Group: </b>
 						</em>
 						{workoutTarget.muscleGroupTwo}
 					</li>
+					</div>
 				</div>
 			</div>
 		);

@@ -4,8 +4,8 @@
 }
 
 .homepage{
-  background-color:  rgb(8, 63, 8, .5);
-  height: 100%;
+  background-color:  rgb(78, 78, 78);
+
 }
 .firstSlide{
     padding: 0;
@@ -72,4 +72,37 @@
     max-height: 100%;
     max-width: 100%;
   filter: grayscale(100%)
+}
+.homeButton{
+  font-family: 'Permanent Marker', cursive;
+}
+
+.exerciseButton{
+  font-family: 'Permanent Marker', cursive;
+}
+
+.ninthSlide{
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    filter: grayscale(100%)
+}
+
+.tenthSlide{
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    filter: grayscale(100%)
+}
+.eleventhSlide{
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    filter: grayscale(100%)
 }

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import SingleWorkoutPage from './SingleWorkoutPage';
 import "./CSS/Back.css"
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 class Back extends Component {
 	render() {
@@ -53,9 +56,21 @@ class Back extends Component {
 
 		return (
 			<div className='musclegroup'>
-				<div className='beginner'> Beginner{workoutInfo} </div>
-				<div className='intermediate'> Intermediate{workoutInfo2}</div>
-				<div className='advanced'> Advanced {workoutInfo3}</div>
+				<div className='beginner'>
+					{' '}
+					<span className='beg'> Beginner </span>
+					{workoutInfo}{' '}
+				</div>
+				<div className='intermediate'>
+					{' '}
+					<span className='int'>Intermediate</span>
+					{workoutInfo2}
+				</div>
+				<div className='advanced'>
+					{' '}
+					<span className='adv'> Advanced </span>
+					{workoutInfo3}
+				</div>
 
 				<Route
 					path='/back/:workout'

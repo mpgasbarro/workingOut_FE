@@ -52,10 +52,21 @@ class Deltoids extends Component {
 		});
 
 		return (
-			<div className="musclegroup">
-				<div className='beginner'> Beginner {workoutInfo} </div>
-				<div className='intermediate'> Intermediate{workoutInfo2}</div>
-				<div className='advanced'> Advanced {workoutInfo3}</div>
+			<div className='musclegroup'>
+				<div className='beginner'>
+					{' '}
+					<span className='beg'> Beginner </span>
+					{workoutInfo}{' '}
+				</div>
+				<div className='intermediate'>
+					{' '}
+					<span className='beg'> Intermediate </span>
+					{workoutInfo2}
+				</div>
+				<div className='advanced'>
+					{' '}
+					<span className='beg'> Advanced </span> {workoutInfo3}
+				</div>
 
 				<Route
 					path='/deltoids/:workout'

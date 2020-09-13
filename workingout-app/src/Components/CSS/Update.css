@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+
 .update {
 	display: flex;
 	flex-direction: row;
@@ -12,4 +16,14 @@
 	flex-direction: column;
 	background-color:  rgba(63, 68, 131, 0.37);
 	padding: 10%;
+}
+
+.beg {
+    font-family: 'Permanent Marker', cursive;
+}
+.int {
+    font-family: 'Permanent Marker', cursive;
+}
+.adv {
+    font-family: 'Permanent Marker', cursive;
 }

@@ -137,8 +137,8 @@ class Create extends Component {
 					/>
 					<Button
 						onClick={this.handleSubmit}
-						className='updateButton'
-						variant='outline-success'>
+						className='submitButton'
+						variant='outline-secondary'>
 						Submit
 					</Button>
 				</form>
