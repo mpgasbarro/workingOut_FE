@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import "./CSS/Update.css"
 
@@ -29,6 +28,7 @@ class Update extends Component {
 		this.setState({ id: '' });
 	};
 	render() {
+		console.log(this.props.match.params);
 		if (this.state.redirect) {
 			return <Redirect to='/'></Redirect>;
 		}

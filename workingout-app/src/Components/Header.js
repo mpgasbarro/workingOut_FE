@@ -13,6 +13,7 @@ function Header() {
 				<Link to='/create' className='header-middle'>
 					<Button variant='outline-info'>New Exercise</Button>
 				</Link>
+				
 			</nav>
 		</div>
 	);

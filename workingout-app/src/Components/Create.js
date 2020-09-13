@@ -21,10 +21,8 @@ class Create extends Component {
 
 	onChange = (event) => {
 		this.setState({ [event.target.id]: event.target.value });
-		console.log('this also worked');
 	};
 	handleSubmit = (event) => {
-		console.log('this worked');
 		event.preventDefault();
 		this.props.createWorkout(this.state);
 		this.setState({ redirect: true });

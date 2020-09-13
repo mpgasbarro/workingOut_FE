@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import Youtube from 'react-youtube';
 import './CSS/SingleWorkoutPage.css';
 import Button from 'react-bootstrap/Button';
+import Delete from './Delete';
 
 let workoutTarget = '';
 let videoID = '';
@@ -27,12 +28,27 @@ class SingleWorkoutPage extends Component {
 		//videoID equates to the id needed on the react Youtube
 		videoID =
 			workoutTarget.workout_url && workoutTarget.workout_url.split('?v=')[1];
+			console.log(`/update/${workoutTarget.id}`);
 		return (
 			<div>
 				<span className='exerciseName'>{workoutTarget.exercise} </span>
 				<Link className='updateButton' to={`/update/${workoutTarget._id}`}>
 					<Button variant='outline-warning'>Update</Button>
 				</Link>
+				<div className='deleteButton'>
+					<Route
+						exact
+						path={`/workout/${workoutTarget.muscleGroupOne}/${this.props.match.params.workout}/:id`}
+						render={(routerProp) => {
+							return (
+								<Delete
+									match={routerProp.match}
+									workouts={this.state.workouts}
+								/>
+							);
+						}}
+					/>
+				</div>
 				<div className='workoutDetails'>
 					<Youtube
 						className='youtube'
