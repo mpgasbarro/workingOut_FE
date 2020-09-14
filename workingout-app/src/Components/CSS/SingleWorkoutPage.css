@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+
+.workoutDetails {
+	display: flex;
+	justify-content: space-around;
+}
+
+.youtube {
+	justify-content: flex-start;
+}
+
+.workoutPic {
+	justify-content: flex-end;
+}
+.exerciseName {
+	font-size: 40px;
+	font-family: 'Permanent Marker', cursive;
+	color:white
+}
+
+.musclesUsed {
+	list-style-type: none;
+	font-family: 'Overpass', sans-serif;
+	color:white;
+}
+
+.desAndMus{
+	display:flex;
+}
+.workoutDes {
+	text-indent: 30px;
+	font-family: 'Overpass', sans-serif;
+	width: 900px;
+	padding-left: 90px;
+	padding-top: 30px;
+	color: white;
+
+}
+
+.primGroup{
+	font-family: 'Permanent Marker', cursive;
+	padding-left: 200px;
+}
+.secondGroup{
+	font-family: 'Permanent Marker', cursive;
+	padding-left: 200px;
+}

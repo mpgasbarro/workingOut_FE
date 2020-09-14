@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+.musclegroup {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Overpass', sans-serif;
+}
+.muscleLevels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.backList {
+    list-style-type: square;
+    margin: 15px 15px 15px 15px;
+    color:white;
+} 
+
+.beg {
+    font-family: 'Permanent Marker', cursive;
+    color:white;
+    font-size: 30px;
+}
+.int {
+    font-family: 'Permanent Marker', cursive;
+     color:white;
+    font-size: 30px;
+}
+.adv {
+    font-family: 'Permanent Marker', cursive;
+     color:white;
+    font-size: 30px;
+}
+
+.cardHeader{
+    background-color: rgb(97, 94, 94);
+}
