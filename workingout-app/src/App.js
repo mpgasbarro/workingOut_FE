@@ -12,6 +12,12 @@ import Back from './Components/Back';
 import Create from './Components/Create';
 import Update from './Components/Update';
 import Home from "./Components/Home";
+import TriPic from './/Fotolia_110740617_S-300x300-removebg-preview.png';
+import DeltPic from './Deltoid-Muscle-Breakdown-removebg-preview.png';
+import BiPic from './Fotolia_110740333_S-693x675-removebg-preview.png';
+import CorePic from './abs-abdominals-muscle-group-exercises-removebg-preview.png';
+import BackPic from './9959c5efe300f6a073bee02225612ca5-removebg-preview.png';
+import PecPic from './357299_5cd3e9b65db095cd3e9b65db41-removebg-preview.png';
 
 
 
@@ -70,9 +76,7 @@ class App extends Component {
 					<Link to='/pectorals'>
 						<img
 							className='Pecs'
-							src={
-								'https://o.remove.bg/downloads/e79e15d7-5a2d-491b-98b1-f9d723f038f3/unnamed-removebg-preview.png'
-							}
+							src={PecPic}
 							alt='human body - chest'
 							width='150'
 							height='150'
@@ -81,7 +85,7 @@ class App extends Component {
 					<Link to='/triceps'>
 						<img
 							className='Tri'
-							src='https://www.peakptfitness.com/wp-content/uploads/2017/04/Fotolia_110740617_S-300x300.jpg'
+							src={TriPic}
 							alt='human body - Triceps'
 							width='150'
 							height='150'
@@ -90,7 +94,7 @@ class App extends Component {
 					<Link to='/deltoids'>
 						<img
 							className='Delt'
-							src='https://oldschoollabs.com/wp-content/uploads/2019/07/Deltoid-Muscle-Breakdown.jpg'
+							src={DeltPic}
 							alt='human body - Deltoids'
 							width='150'
 							height='150'
@@ -99,7 +103,7 @@ class App extends Component {
 					<Link to='/biceps'>
 						<img
 							className='Bi'
-							src='https://iaom-us.com/wp-content/uploads/2018/11/Fotolia_110740333_S-693x675.jpg'
+							src={BiPic}
 							alt='human body - biceps'
 							width='150'
 							height='150'
@@ -108,7 +112,7 @@ class App extends Component {
 					<Link to='/core'>
 						<img
 							className='core'
-							src='https://image.jimcdn.com/app/cms/image/transf/dimension=185x10000:format=jpg/path/sb706e6011cc48302/image/if120ec98e7652429/version/1541689214/abs-abdominals-muscle-group-exercises.jpg'
+							src={CorePic}
 							alt='human body - core'
 							width='150'
 							height='150'
@@ -117,7 +121,7 @@ class App extends Component {
 					<Link to='/back'>
 						<img
 							className='back'
-							src='https://o.remove.bg/downloads/7174090e-eb6c-4e87-8268-123f74802658/paraspinal-muscles-removebg-preview.png'
+							src={BackPic}
 							alt='human body - back'
 							width='150'
 							height='150'

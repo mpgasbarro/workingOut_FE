@@ -36,7 +36,7 @@ class Delete extends Component {
 					onClick={(event) => {
 						this.deleteGame(event);
 					}}>
-					Delete DELETE DELETE
+					Delete
 				</Button>
 			</div>
 		);
