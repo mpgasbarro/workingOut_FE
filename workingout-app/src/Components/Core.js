@@ -54,21 +54,25 @@ class Core extends Component {
 
 		return (
 			<div className='musclegroup'>
-				<div className='beginner'>
-					{' '}
-					<span className='beg'> Beginner </span>
-					{workoutInfo}{' '}
+				<div className='muscleLevels'>
+					<div className='beginner'>
+						{' '}
+						<span className='beg'> Beginner </span>
+						{workoutInfo}{' '}
+					</div>
+					<div className='intermediate'>
+						{' '}
+						<span className='beg'> Intermediate</span>
+						{workoutInfo2}
+					</div>
+					<div className='advanced'>
+						{' '}
+						<span className='beg'> Advanced </span> {workoutInfo3}
+					</div>
 				</div>
-				<div className='intermediate'>
-					{' '}
-					<span className='beg'> Intermediate</span>
-					{workoutInfo2}
-				</div>
-				<div className='advanced'>
-					{' '}
-					<span className='beg'> Advanced </span> {workoutInfo3}
-				</div>
-				<Home />
+				<section>
+					<Home />
+				</section>
 			</div>
 		);
 	}

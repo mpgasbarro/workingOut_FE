@@ -3,7 +3,13 @@
 
 .musclegroup {
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
+    flex-direction: column;
+}
+.muscleLevels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .coreList {
     list-style-type: square;

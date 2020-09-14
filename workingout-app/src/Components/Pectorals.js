@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import './CSS/Pectorals.css';
 import SingleWorkoutPage from './SingleWorkoutPage';
-
+import Home from './Home';
 
 class Pectorals extends Component {
 	render() {
@@ -55,6 +55,7 @@ class Pectorals extends Component {
 
 		return (
 			<div className='musclegroup'>
+				<div className='muscleLevels'> 
 				<div className='beginner'>
 					<span className='beg'> Beginner </span>
 					{workoutInfo}{' '}
@@ -66,8 +67,10 @@ class Pectorals extends Component {
 				<div className='advanced'>
 					<span className='beg'> Advanced</span> {workoutInfo3}
 				</div>
-
-	
+				</div>
+				<section>
+					<Home />
+				</section>
 			</div>
 		);
 	}

@@ -3,7 +3,12 @@
 
 .musclegroup {
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
+}
+.muscleLevels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .pecList {
     list-style-type: square;

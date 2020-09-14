@@ -4,7 +4,11 @@
 .musclegroup {
     display: flex;
     justify-content: space-around;
-
+}
+.muscleLevels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .deltList {
     list-style-type: square;

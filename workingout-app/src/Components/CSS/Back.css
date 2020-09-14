@@ -6,6 +6,11 @@
     justify-content: space-around;
     font-family: 'Overpass', sans-serif;
 }
+.muscleLevels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .backList {
     list-style-type: square;
     margin: 15px 15px 15px 15px;

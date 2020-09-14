@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import SingleWorkoutPage from './SingleWorkoutPage';
 import './CSS/Triceps.css'
+import Home from './Home';
 
 class Triceps extends Component {
 	render() {
@@ -53,6 +54,7 @@ class Triceps extends Component {
 
 		return (
 			<div className='musclegroup'>
+				<div className='muscleLevels'> 
 				<div className='beginner'>
 					{' '}
 					<span className='beg'> Beginner </span>
@@ -67,8 +69,10 @@ class Triceps extends Component {
 					{' '}
 					<span className='beg'> Advanced </span> {workoutInfo3}
 				</div>
-
-
+				</div> 
+				<section>
+					<Home />
+				</section>
 			</div>
 		);
 	}
