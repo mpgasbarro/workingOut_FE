@@ -2,7 +2,9 @@
   display: flex;
   justify-content: space-around
 }
-
+.link {
+  color: white;
+}
 .homepage{
   background-color:  rgb(78, 78, 78);
 

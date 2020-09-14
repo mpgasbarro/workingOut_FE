@@ -8,6 +8,14 @@ class Update extends Component {
 		super();
 		this.state = {
 			id: '',
+			exercise: '',
+			muscleGroupOne: 'Triceps',
+			muscleGroupTwo: 'Triceps',
+			muscleGroupThree: 'Triceps',
+			levelOfDifficulty: 'Beginner',
+			workout_img: '',
+			workout_url: '',
+			description: '',
 			redirect: false,
 		};
 	}
@@ -20,7 +28,18 @@ class Update extends Component {
 	};
 	handleSubmit = (event) => {
 		event.preventDefault();
-		this.props.updateWorkout(this.state);
+		let updatedWorkout = {
+			id: this.props.match.params.id,
+			exercise: this.state.exercise,
+			muscleGroupOne: this.state.muscleGroupOne,
+			muscleGroupTwo: this.state.muscleGroupTwo,
+			muscleGroupThree: this.state.muscleGroupThree,
+			levelOfDifficulty: this.state.levelOfDifficulty,
+			workout_img: this.state.workout_img,
+			workout_url: this.state.workout_url,
+			description: this.state.description,
+		};
+		this.props.updateWorkout(updatedWorkout);
 		this.clearForm(event);
 		this.setState({ redirect: true });
 	};

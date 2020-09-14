@@ -17,11 +17,13 @@
 .exerciseName {
 	font-size: 40px;
 	font-family: 'Permanent Marker', cursive;
+	color:white
 }
 
 .musclesUsed {
 	list-style-type: none;
 	font-family: 'Overpass', sans-serif;
+	color:white;
 }
 
 .desAndMus{
@@ -32,7 +34,8 @@
 	font-family: 'Overpass', sans-serif;
 	width: 900px;
 	padding-left: 90px;
-	padding-top: 30px
+	padding-top: 30px;
+	color: white;
 
 }
 

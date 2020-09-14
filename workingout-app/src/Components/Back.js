@@ -45,7 +45,7 @@ class Back extends Component {
 				back.levelOfDifficulty === 'Advanced'
 			) {
 				return (
-					<Link to={`/back/${back.exercise}`}>
+					<Link to={`/back/${back.exercise}` }>
 						<li className='backList' key={index}>
 							{back.exercise}
 						</li>
@@ -72,13 +72,7 @@ class Back extends Component {
 					{workoutInfo3}
 				</div>
 
-				<Route
-					path='/back/:workout'
-					exact
-					render={(routerProp) => {
-						return <SingleWorkoutPage match={routerProp.match} />;
-					}}
-				/>
+			
 			</div>
 		);
 	}

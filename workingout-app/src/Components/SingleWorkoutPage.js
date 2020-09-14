@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import Youtube from 'react-youtube';
 import './CSS/SingleWorkoutPage.css';
 import Button from 'react-bootstrap/Button';
 import Delete from './Delete';
+
 
 let workoutTarget = '';
 let videoID = '';
@@ -31,27 +32,23 @@ class SingleWorkoutPage extends Component {
 			console.log(`/update/${workoutTarget.id}`);
 		return (
 			<div>
-				<span className='exerciseName'>{workoutTarget.exercise}
-				<Link  to={`/update/${workoutTarget._id}`}>
-					<Button variant='outline-secondary'>
-						Update
-					</Button>
-				</Link>
+				<span className='exerciseName'>
+					{workoutTarget.exercise}
+					<Link to={`/update/${workoutTarget.id}`}>
+						<Button variant='outline-light'>Update</Button>
+					</Link>
 				</span>
-				<div className='deleteButton'>
-					<Route
-						exact
-						path={`/workout/${workoutTarget.muscleGroupOne}/${this.props.match.params.workout}/:id`}
-						render={(routerProp) => {
-							return (
-								<Delete
-									match={routerProp.match}
-									workouts={this.state.workouts}
-								/>
-							);
-						}}
-					/>
-				</div>
+				<div className='deleteButton'></div>
+				<Route
+					exact
+					path={`/workout/${workoutTarget.muscleGroupOne}/${this.props.match.params.workout}/:id`}
+					render={(routerProp) => {
+						return (
+							<Delete match={routerProp.match} workouts={this.state.workouts} />
+						);
+					}}
+				/>
+
 				<div className='workoutDetails'>
 					<Youtube
 						className='youtube'
@@ -67,21 +64,21 @@ class SingleWorkoutPage extends Component {
 						height='500'
 					/>
 				</div>
-				<div className="desAndMus">
-				<p className='workoutDes'>{workoutTarget.description}</p>
-				<div className='musclesUsed'>
-					<li className='primaryMuscle'>
-						<em>
-							<b className='primGroup'>Primary Muscle Group:</b>
-						</em>{' '}
-						{workoutTarget.muscleGroupOne}
-					</li>
-					<li className='secondaryMuscle'>
-						<em>
-							<b className='secondGroup'>Secondary Muscle Group: </b>
-						</em>
-						{workoutTarget.muscleGroupTwo}
-					</li>
+				<div className='desAndMus'>
+					<p className='workoutDes'>{workoutTarget.description}</p>
+					<div className='musclesUsed'>
+						<li className='primaryMuscle'>
+							<em>
+								<b className='primGroup'>Primary Muscle Group:</b>
+							</em>{' '}
+							{workoutTarget.muscleGroupOne}
+						</li>
+						<li className='secondaryMuscle'>
+							<em>
+								<b className='secondGroup'>Secondary Muscle Group: </b>
+							</em>
+							{workoutTarget.muscleGroupTwo}
+						</li>
 					</div>
 				</div>
 			</div>

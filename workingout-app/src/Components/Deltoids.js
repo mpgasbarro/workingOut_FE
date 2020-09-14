@@ -68,13 +68,7 @@ class Deltoids extends Component {
 					<span className='beg'> Advanced </span> {workoutInfo3}
 				</div>
 
-				<Route
-					path='/deltoids/:workout'
-					exact
-					render={(routerProp) => {
-						return <SingleWorkoutPage match={routerProp.match} />;
-					}}
-				/>
+		
 			</div>
 		);
 	}

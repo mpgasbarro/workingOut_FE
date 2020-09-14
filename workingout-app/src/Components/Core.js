@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import SingleWorkoutPage from './SingleWorkoutPage';
-import "./CSS/Core.css"
+import './CSS/Core.css';
+import Home from './Home';
 
 class Core extends Component {
 	render() {
 		// Mapping through API, for Core exercise with a Beginner difficulty
 		let workoutInfo = this.props.workout.map((core, index) => {
 			if (
-				core.muscleGroupOne === ('Abdominals' || "Obliques")  &&
+				core.muscleGroupOne === ('Abdominals' || 'Obliques') &&
 				core.levelOfDifficulty === 'Beginner'
 			) {
 				return (
@@ -23,7 +24,7 @@ class Core extends Component {
 		// Mapping through API, for Core exercise with a Intermediate difficulty
 		let workoutInfo2 = this.props.workout.map((core, index) => {
 			if (
-				core.muscleGroupOne === ('Abdominals' || "Obliques") &&
+				core.muscleGroupOne === ('Abdominals' || 'Obliques') &&
 				core.levelOfDifficulty === 'Intermediate'
 			) {
 				return (
@@ -38,7 +39,7 @@ class Core extends Component {
 		// Mapping through API, for Core exercise with an Advanced difficulty
 		let workoutInfo3 = this.props.workout.map((core, index) => {
 			if (
-				core.muscleGroupOne === ('Abdominals' || "Obliques") &&
+				core.muscleGroupOne === ('Abdominals' || 'Obliques') &&
 				core.levelOfDifficulty === 'Advanced'
 			) {
 				return (
@@ -67,14 +68,7 @@ class Core extends Component {
 					{' '}
 					<span className='beg'> Advanced </span> {workoutInfo3}
 				</div>
-
-				<Route
-					path='/core/:workout'
-					exact
-					render={(routerProp) => {
-						return <SingleWorkoutPage match={routerProp.match} />;
-					}}
-				/>
+				<Home />
 			</div>
 		);
 	}

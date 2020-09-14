@@ -11,7 +11,8 @@ import Core from './Components/Core';
 import Back from './Components/Back';
 import Create from './Components/Create';
 import Update from './Components/Update';
-import Carousel from 'react-bootstrap/Carousel';
+import Home from "./Components/Home";
+
 
 
 
@@ -57,18 +58,21 @@ class App extends Component {
 		fetch(`${workoutUrl}${workout.id}`, requestOptions)
       .then((res) => res.json())
 			//add logic to select specific game
-      .then((data) => this.setState({ games: [...this.state.workouts, data] }));
+      .then((data) => this.setState({ workouts: [...this.state.workouts, data] }));
 	};
 
 	render() {
 		return (
 			<main className='homepage'>
 				<Header />
+      
 				<section className='bodyPartPics'>
 					<Link to='/pectorals'>
 						<img
 							className='Pecs'
-							src='https://o.remove.bg/downloads/5f2a7b34-4743-4669-9222-085089033f82/depositphotos_109811754-stock-photo-chest-muscles-pectoralis-major-and-removebg-preview.png'
+							src={
+								'https://o.remove.bg/downloads/e79e15d7-5a2d-491b-98b1-f9d723f038f3/unnamed-removebg-preview.png'
+							}
 							alt='human body - chest'
 							width='150'
 							height='150'
@@ -77,7 +81,7 @@ class App extends Component {
 					<Link to='/triceps'>
 						<img
 							className='Tri'
-							src='https://o.remove.bg/downloads/84b8d2ce-52c5-4d7a-a9c1-7af1ab45beb2/Fotolia_110740617_S-300x300-removebg-preview.png'
+							src='https://www.peakptfitness.com/wp-content/uploads/2017/04/Fotolia_110740617_S-300x300.jpg'
 							alt='human body - Triceps'
 							width='150'
 							height='150'
@@ -86,7 +90,7 @@ class App extends Component {
 					<Link to='/deltoids'>
 						<img
 							className='Delt'
-							src='https://o.remove.bg/downloads/e2c411bf-12bf-440b-ac22-7b91b6b8df2f/Deltoid-Muscle-Breakdown-removebg-preview.png'
+							src='https://oldschoollabs.com/wp-content/uploads/2019/07/Deltoid-Muscle-Breakdown.jpg'
 							alt='human body - Deltoids'
 							width='150'
 							height='150'
@@ -95,7 +99,7 @@ class App extends Component {
 					<Link to='/biceps'>
 						<img
 							className='Bi'
-							src='https://o.remove.bg/downloads/79ef73dd-31c6-4af2-bf0d-6b8c16915591/Fotolia_110740333_S-693x675-removebg-preview.png'
+							src='https://iaom-us.com/wp-content/uploads/2018/11/Fotolia_110740333_S-693x675.jpg'
 							alt='human body - biceps'
 							width='150'
 							height='150'
@@ -104,7 +108,7 @@ class App extends Component {
 					<Link to='/core'>
 						<img
 							className='core'
-							src='https://o.remove.bg/downloads/c3ac1e8c-1d2d-402d-8780-6692564ae39f/abs-abdominals-muscle-group-exercises-removebg-preview.png'
+							src='https://image.jimcdn.com/app/cms/image/transf/dimension=185x10000:format=jpg/path/sb706e6011cc48302/image/if120ec98e7652429/version/1541689214/abs-abdominals-muscle-group-exercises.jpg'
 							alt='human body - core'
 							width='150'
 							height='150'
@@ -121,6 +125,11 @@ class App extends Component {
 					</Link>
 				</section>
 				<Switch>
+          <Route 
+          path="/"
+          component={Home}
+          exact
+          />
 					<Route
 						exact
 						path='/pectorals'
@@ -262,88 +271,51 @@ class App extends Component {
 							);
 						}}
 					/>
+					<Route
+						path='/back/:workout'
+						exact
+						render={(routerProp) => {
+							return <SingleWorkoutPage match={routerProp.match} />;
+						}}
+					/>
+					<Route
+						path='/biceps/:workout'
+						exact
+						render={(routerProp) => {
+							return <SingleWorkoutPage match={routerProp.match} />;
+						}}
+					/>
+					<Route
+						path='/core/:workout'
+						exact
+						render={(routerProp) => {
+							return <SingleWorkoutPage match={routerProp.match} />;
+						}}
+					/>
+					<Route
+						path='/deltoids/:workout'
+						exact
+						render={(routerProp) => {
+							return <SingleWorkoutPage match={routerProp.match} />;
+						}}
+					/>
+	
+					<Route
+						path='/triceps/:workout'
+						exact
+						render={(routerProp) => {
+							return <SingleWorkoutPage match={routerProp.match} />;
+						}}
+					/>
+					<Route
+						path='/pectorals/:workout'
+						exact
+						render={(routerProp) => {
+							return <SingleWorkoutPage match={routerProp.match} />;
+						}}
+					/>
 				</Switch>
-				<section>
-					<Carousel>
-						<Carousel.Item interval={500}>
-							<img
-								className='firstSlide'
-								src='https://www.designyourway.net/blog/wp-content/uploads/2016/07/Motivational-wallpaper-quotes-6.jpg'
-								alt='First slide'
-							/>
-						</Carousel.Item>
-						<Carousel.Item interval={500}>
-							<img
-								className='secondSlide'
-								src='https://www.designyourway.net/blog/wp-content/uploads/2016/07/Motivational-wallpaper-quotes-7.jpg'
-								alt='second slide'
-							/>
-						</Carousel.Item>
-						<Carousel.Item interval={1000}>
-							<img
-								className='thirdSlide'
-								src='https://www.designyourway.net/blog/wp-content/uploads/2016/07/Muhammad-Ali-quote.jpg'
-								alt='Third slide'
-							/>
-						</Carousel.Item>
-						<Carousel.Item interval={500}>
-							<img
-								className='fourthSlide'
-								src='https://www.designyourway.net/blog/wp-content/uploads/2012/07/428266-1536x1024.jpg'
-								alt='Fourth slide'
-							/>
-						</Carousel.Item>
-						<Carousel.Item interval={1000}>
-							<img
-								className='fifthSlide'
-								src='https://www.designyourway.net/blog/wp-content/uploads/2016/07/Many-of-lifes-failures.jpg'
-								alt='Fifth slide'
-							/>
-						</Carousel.Item>
-						<Carousel.Item interval={500}>
-							<img
-								className='sixthSlide'
-								src='https://www.designyourway.net/blog/wp-content/uploads/2016/07/DESIGN-IS-DESTINY.jpg'
-								alt='sixth slide'
-							/>
-						</Carousel.Item>
-						<Carousel.Item interval={500}>
-							<img
-								className='seventhSlide'
-								src='https://www.designyourway.net/blog/wp-content/uploads/2016/07/Motivational-wallpaper-quotes-18.jpg'
-								alt='seventh slide'
-							/>
-						</Carousel.Item>
-						<Carousel.Item interval={500}>
-							<img
-								className='eighthSlide'
-								src='https://www.designyourway.net/blog/wp-content/uploads/2012/07/334240.jpg'
-								alt='Eighth slide'
-							/>
-						</Carousel.Item>
-						<Carousel.Item interval={500}>
-							<img
-								className='ninthSlide'
-								src='https://www.designyourway.net/blog/wp-content/uploads/2016/07/Never-give-up.jpg'
-								alt='ninth slide'
-							/>
-						</Carousel.Item>
-						<Carousel.Item interval={500}>
-							<img
-								className='tenthSlide'
-								src='https://www.designyourway.net/blog/wp-content/uploads/2016/07/Motivational-wallpaper-quotes-4.jpg'
-								alt='tenth slide'
-							/>
-						</Carousel.Item>
-						<Carousel.Item interval={500}>
-							<img
-								className='eleventhSlide'
-								src='https://external-preview.redd.it/JOqi_n3w84_kIcQTt6LwAx5A33PxJ5fP0RKlZbTD58k.jpg?auto=webp&s=3258576f7df0884eae51310261fe182b8f7d16d9'
-								alt='tenth slide'
-							/>
-						</Carousel.Item>
-					</Carousel>
-				</section>
+			
 			</main>
 		);
 	}

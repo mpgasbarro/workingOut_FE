@@ -8,10 +8,10 @@ function Header() {
 		<div>
 			<nav>
 				<Link to='/'>
-					<Button variant='outline-dark' className="homeButton"> Home </Button>
+					<Button variant='outline-light' className="homeButton"> Home </Button>
 				</Link>
 				<Link to='/create' className='header-middle'>
-					<Button variant='outline-dark' className="exerciseButton">New Exercise</Button>
+					<Button variant='outline-light' className="exerciseButton">New Exercise</Button>
 				</Link>
 				
 			</nav>

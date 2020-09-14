@@ -67,13 +67,7 @@ class Pectorals extends Component {
 					<span className='beg'> Advanced</span> {workoutInfo3}
 				</div>
 
-				<Route
-					path='/pectorals/:workout'
-					exact
-					render={(routerProp) => {
-						return <SingleWorkoutPage match={routerProp.match} />;
-					}}
-				/>
+	
 			</div>
 		);
 	}

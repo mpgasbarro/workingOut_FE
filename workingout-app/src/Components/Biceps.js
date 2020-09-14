@@ -67,13 +67,7 @@ class Biceps extends Component {
 					{workoutInfo3}
 				</div>
 
-				<Route
-					path='/biceps/:workout'
-					exact
-					render={(routerProp) => {
-						return <SingleWorkoutPage match={routerProp.match} />;
-					}}
-				/>
+		
 			</div>
 		);
 	}
