@@ -13,10 +13,10 @@ class Delete extends Component {
 		};
 	}
 	deleteGame() {
-		fetch(`${workoutUrl}/${this.props.match.params.id}`, {
+		fetch(`${workoutUrl}/workout/${this.props.match.params.id}`, {
 			method: 'DELETE',
 		}).then(() => {
-			fetch(`${workoutUrl}`)
+			fetch(`${workoutUrl}workout`)
 				.then((res) => res.json())
 				.then((res) => {
 					this.setState({ workouts: res, redirect: true });

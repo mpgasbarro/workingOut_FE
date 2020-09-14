@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around
 }
-.link {
+.a {
   color: white;
 }
 .homepage{
@@ -108,3 +108,4 @@
     max-width: 100%;
     filter: grayscale(100%)
 }
+

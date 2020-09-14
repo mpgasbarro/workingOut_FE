@@ -12,7 +12,8 @@
 }
 .biList {
     list-style-type: square;
-    margin: 15px 15px 15px 15px
+    margin: 15px 15px 15px 15px; 
+    color:white; 
 } 
 
 .beg {
@@ -23,4 +24,8 @@
 }
 .adv {
     font-family: 'Permanent Marker', cursive;
+}
+
+.yes{
+    color: white
 }

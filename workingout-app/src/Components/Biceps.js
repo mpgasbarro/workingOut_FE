@@ -56,7 +56,7 @@ class Biceps extends Component {
 				<div className='muscleLevels'> 
 				<div className='beginner'>
 					{' '}
-					<span className='beg'> Beginner </span> {workoutInfo}{' '}
+					<span className='beg'> Beginner </span><span className="yes"> {workoutInfo} </span>{' '}
 				</div>
 				<div className='intermediate'>
 					{' '}

@@ -12,12 +12,12 @@ import Back from './Components/Back';
 import Create from './Components/Create';
 import Update from './Components/Update';
 import Home from "./Components/Home";
-import TriPic from './/Fotolia_110740617_S-300x300-removebg-preview.png';
-import DeltPic from './Deltoid-Muscle-Breakdown-removebg-preview.png';
-import BiPic from './Fotolia_110740333_S-693x675-removebg-preview.png';
-import CorePic from './abs-abdominals-muscle-group-exercises-removebg-preview.png';
-import BackPic from './9959c5efe300f6a073bee02225612ca5-removebg-preview.png';
-import PecPic from './357299_5cd3e9b65db095cd3e9b65db41-removebg-preview.png';
+import TriPic from './BodyPics/Fotolia_110740617_S-300x300-removebg-preview.png';
+import DeltPic from './BodyPics/Deltoid-Muscle-Breakdown-removebg-preview.png';
+import BiPic from './BodyPics/Fotolia_110740333_S-693x675-removebg-preview.png';
+import CorePic from './BodyPics/abs-abdominals-muscle-group-exercises-removebg-preview.png';
+import BackPic from './BodyPics/9959c5efe300f6a073bee02225612ca5-removebg-preview.png';
+import PecPic from './BodyPics/357299_5cd3e9b65db095cd3e9b65db41-removebg-preview.png';
 
 
 

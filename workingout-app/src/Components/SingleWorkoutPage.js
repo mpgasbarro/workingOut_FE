@@ -38,17 +38,17 @@ class SingleWorkoutPage extends Component {
 						<Button variant='outline-light'>Update</Button>
 					</Link>
 				</span>
-				<div className='deleteButton'></div>
+				<div className='deleteButton'>
 				<Route
 					exact
-					path={`/workout/${workoutTarget.muscleGroupOne}/${this.props.match.params.workout}/:id`}
+					path={`/workout/:id`}
 					render={(routerProp) => {
 						return (
 							<Delete match={routerProp.match} workouts={this.state.workouts} />
 						);
 					}}
 				/>
-
+				</div>
 				<div className='workoutDetails'>
 					<Youtube
 						className='youtube'
